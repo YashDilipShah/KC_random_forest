@@ -1,0 +1,30 @@
+import pickle
+regressor = pickle.load(open("KC_SAVED_RANDOM_FOREST_ORIGINAL.sav", "rb"))
+print("This model is having accuracy of 88.313%")
+import numpy as np
+def predict_user_values():
+    inp = []
+    inp.append(float(input("Bedrooms: ")))
+    inp.append(float(input("Bathrooms: ")))
+    inp.append(float(input("Sqft_Living: ")))
+    inp.append(float(input("Sqft_Lot: ")))
+    inp.append(float(input("Floors: ")))
+    inp.append(float(input("Waterfront: ")))
+    inp.append(float(input("View: ")))
+    inp.append(float(input("Condition: ")))
+    inp.append(float(input("Grade: ")))
+    inp.append(float(input("Sqft_Above: ")))
+    inp.append(float(input("Sqft_basement: ")))
+    inp.append(float(input("Year Built: ")))
+    inp.append(float(input("Year Renovated: ")))
+    inp.append(float(input("Zipcode: ")))
+    inp.append(47.560053)
+    inp.append(-122.213896)
+    inp.append(float(input("Sqft_living_15: ")))
+    inp.append(float(input("Sqft_lot_15: ")))
+    arr = np.array(inp)
+    arr = np.reshape(arr, (1, len(inp)))
+    pred = regressor.predict(arr)
+    print(pred)
+    
+predict_user_values()
