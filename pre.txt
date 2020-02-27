@@ -1,0 +1,245 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>nothing1</title>
+</head>
+<style>
+*
+{
+margin: 0;
+}
+body
+{
+background: url("{% static 'main/images/home1.jpeg' %}");
+background-size: cover;
+background-position: center;
+border-bottom: 5px lightblue;
+}
+.header
+{
+	margin-left: 400px;
+	padding: 5px;
+	margin-bottom: -15px;
+    font-size: 23px;
+	background-color: rgba(0,0,0,0);
+}
+.header ul
+{
+text-align: left;
+margin-top: -63px;
+
+
+}
+
+.header ul li
+{
+list-style: none;
+display:inline-block;
+}
+.header ul li a
+{
+display: block;
+text-decoration: none;
+text-transform: uppercase;
+color: rgb(0,0,0);
+font-size: 20px;
+font-family: sans-serif;
+letter-spacing: 4px;
+font-weight: 500;
+padding: 17px;
+}
+
+.login-box{
+	background-color: rgba(0,0,0,0.5);
+	overflow-y: scroll;
+	text-align: left;
+	margin-left: 85px;
+	margin-right: 445px;
+	margin-top: 70px;
+	height: 550px;
+	font-family: sans-serif;
+	color: orange;
+}
+
+.header ul li a:hover
+{
+border-bottom: 4px solid darkblue;
+}
+.block{
+	background: rgba(0,0,0,0.5);
+	border-color: solid grey;
+	border-right: 1px solid grey;
+	border-bottom: 1px solid grey;
+	font-size: 16px;
+}
+
+
+.hpp
+{
+	margin-top: 15px;
+
+	margin-right: 950px;
+	position: top-left;
+
+	padding: 5px;
+
+	color: black;
+	font-weight: 525;
+
+	text-align: left;
+	text-decoration: none;
+	font-family: sans-serif;
+	font-size: 35px;
+
+
+}
+.hpp a
+{
+	display: block;
+text-decoration:none;
+
+color: rgb(0,0,0,0.5);
+font-size: 35px;
+
+}
+#kuch{
+	background-color:#ff9999;
+	font-family: sans-serif;
+	border: solid thin 2px;
+	border-color: #000000;
+	border-radius: 20%;
+	cursor: pointer;
+}
+
+
+
+</style>
+<script type="text/javascript" src="{% static 'main/javascript/predict.js' %}"></script>
+
+
+<body>
+
+<div class="hpp">
+
+    <a href="/">House Price Prediction</a>
+</div>
+
+
+
+<div class="header">
+    <ul>
+        <li style="text-align: center;font-size: 20px;"><a href="/">Home</a></li>
+        <li style="text-align: center;font-size: 20px;"><a href="/accounts/login">Login</a></li>
+        <li style="text-align: center;font-size: 20px;"><a href="/accounts/signup">Sign-up</a></li>
+        <li style="text-align: center;font-size: 20px;"><a href="/predict">Predict</a></li>
+        <li style="text-align: center;font-size: 20px;"><a href="/about">About </a></li>
+    </ul>
+
+
+    <div class="login-box">
+        <form onsubmit="return validate()" action="{% url 'predict' %}" method="post">
+            {% csrf_token %}
+            <br>
+            <p>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp Bedroom &nbsp
+                <input id="yo1" type="number" name="number1" class="block block1" placeholder="&nbsp&nbsp Enter here"
+                       style="color: white;" min="0" max="1000000000000000"></p>
+            <br>
+            <p>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp Bathroom &nbsp
+                <input id="yo2" type="number" name="number2" class="block block1" placeholder="&nbsp&nbsp Enter here"
+                       style="color: white;" min="0" max="1000000000000000"></p>
+            <br>
+            <p>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp Sqft_living &nbsp
+                <input id="yo3" type="number" name="number3" class="block block1" placeholder="&nbsp&nbsp Enter here"
+                       style="color: white;" min="0" max="1000000000000000"></p>
+            <br>
+            <p>&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp Sqft_lot &nbsp
+                <input id="yo4" type="number" name="number4" class="block block1" placeholder="&nbsp&nbsp Enter here"
+                       style="color: white;" min="0" max="1000000000000000"></p>
+            <br>
+            <p>&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp Floors &nbsp
+                <input id="yo5" type="number" name="number5" class="block block1" placeholder="&nbsp&nbsp Enter here"
+                       style="color: white;" min="0" max="1000000000000000"></p>
+            <br>
+            <p>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp Sqft_above &nbsp
+                <input id="yo6" type="number" name="number6" class="block block1" placeholder="&nbsp&nbsp Enter here"
+                       style="color: white;" min="0" max="1000000000000000"></p>
+            <br>
+            <p>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp Sqft_basement
+                <input id="yo8" type="number" name="number8" class="block block1" placeholder="&nbsp&nbsp Enter here"
+                       style="color: white;" min="0" max="1000000000000000"></p>
+            <br>
+            <p>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp Zip code &nbsp
+                <input id="yo9" type="number" name="number9" class="block block1" placeholder="&nbsp&nbsp Enter here"
+                       style="color: white;" min="0" max="1000000000000000"></p>
+            <br>
+            <p>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp Sqft_living15 &nbsp
+                <input id="yo10" type="number" name="number10" class="block block1" placeholder="&nbsp&nbsp Enter here"
+                       style="color: white;" min="0" max="1000000000000000"></p>
+            <br>
+            <p>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp Sqft_lot15 &nbsp
+                <input id="yo11" type="number" name="number11" class="block block1" placeholder="&nbsp&nbsp Enter here"
+                       style="color: white;"></p>
+            <br>
+
+            <p>&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp Year renovated &nbsp
+                <input id="yo14" type="date" name="yesno" class="block" placeholder="&nbsp&nbsp Enter here"
+                       style="color: white;" min="0" max="1000000000000000"> &nbsp &nbsp ("if yes")
+            </p>
+            <br>
+            <p>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp Year Built &nbsp
+                <input id="yo15" type="date" name="date" class="block" placeholder="&nbsp&nbsp Enter here"
+                       style="color: white;"></p>
+            <br>
+            <p>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp View &nbsp
+                <select class="block" style="color: white;" name="viewss">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </p><br>
+             <p>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp Waterfront &nbsp
+                <select class="block" style="color: white;" name="waterfront">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </p>
+            <br>
+            <p>&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp Condition &nbsp
+                <select class="block" style="color: white;" name="condition">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </p>
+            <br>
+
+            <p>&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Grade &nbsp
+                <select class="block" style="color: white;" name="grade">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select></p>
+            <br>
+            <p style="text-align: center;">
+                <input id="kuch" type="submit" name="btn" value="Submit">
+            </p><br>
+        </form>
+
+    </div>
+</body>
+</html>
