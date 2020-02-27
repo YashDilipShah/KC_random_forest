@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>predict</title>
+</head>
+<style type="text/css">
+
+body{
+	background-image: url(1.jpg);
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+}
+	
+.block{
+	margin-top: 500px;
+	font-size: 50px;
+	font-family: 'calibri';
+	text-align: center;
+}
+
+.b{
+	width: 220px;
+	height: 40px;
+	border: none;
+	font-size: 50px;
+	font-family: 'calibri';
+	background-color: rgba(0,0,0,0);
+}
+</style>
+<body>
+<div class="block">
+The predicted price is <input type="text" name="price" class="b">
+</div>
+</body>
+</html>
