@@ -14,9 +14,9 @@ function vaidate()
 	var check11=document.getElementById('yo11');
 	var check12=document.getElementById('yo12');
 	var check13=document.getElementById('yo13');
-	var check14=document.getElementById('yo14');
-	var check15=document.getElementById('yo15');
-	if(check1.value.trim()==""||check2.value.trim()==""||check3.value.trim()==""||check4.value.trim()==""||check5.value.trim()==""||check6.value.trim()==""||check7.value.trim()==""||check8.value.trim()==""||check9.value.trim()==""||check10.value.trim()==""||check11.value.trim()==""||check12.value.trim()==""||check13.value.trim()==""||check14.value.trim()==""||check15.value.trim()=="")
+	/*var check14=document.getElementById('yo14');
+	var check15=document.getElementById('yo15');*/
+	if(check1.value.trim()==""||check2.value.trim()==""||check3.value.trim()==""||check4.value.trim()==""||check5.value.trim()==""||check6.value.trim()==""||check7.value.trim()==""||check8.value.trim()==""||check9.value.trim()==""||check10.value.trim()==""||check11.value.trim()==""||check12.value.trim()==""||check13.value.trim()=="")
 	{
 		alert("Please fill all the details");
 		return false;
